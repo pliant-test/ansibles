@@ -3,6 +3,9 @@
   vars_files:
     - secrets.yml
   tasks:
+    - name: pause for a couple of seconds
+      pause:
+        seconds: "{{ sleep | default(1) }}"
     - name: Print the DB password (for demo only—avoid in real use!)
       debug:
         msg: "The DB password is {{ mysecret }}"
