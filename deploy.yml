@@ -1,0 +1,8 @@
+- name: Deploy app with secure credentials
+  hosts: webservers
+  vars_files:
+    - secrets.yml
+  tasks:
+    - name: Print the DB password (for demo only—avoid in real use!)
+      debug:
+        msg: "The DB password is {{ mysecret }}"
